@@ -9,3 +9,10 @@ def target_function(x):
     return x
 
 
+def solve_iteration(func,a,b,e):
+    ans = [a,b]
+    q = 0.5
+    while abs(ans[-1]-ans[-2]) >= ((1-q)/q) * e:
+        ans.append(func(ans[-1]))
+    ans = ans[1:]
+    return ans[-1], len(ans), ans
