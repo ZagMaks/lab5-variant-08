@@ -17,7 +17,12 @@ def solve_iteration(func,a,b,e):
     ans = ans[1:]
     return ans[-1], len(ans), ans
 
-
+def save_results_to_file():
+    with open("results_variant_08.txt", "w", encoding="utf-8") as file:
+        file.write(f"Корінь: {str(x)}\n")
+        file.write("Результати обчислень:\n")
+        for i in range(len(s)):
+            file.write(f"{str(i+1):<10}{s[i]:.6f}\n")
 
 if __name__=="__main__":
     a,b = -1,1
@@ -26,3 +31,4 @@ if __name__=="__main__":
     print("корінь рівняння:", x)
     print("кількість ітерацій:", i)
     print("список-протокол обчислень:", s)
+    save_results_to_file()
