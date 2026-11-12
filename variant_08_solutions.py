@@ -16,3 +16,13 @@ def solve_iteration(func,a,b,e):
         ans.append(func(ans[-1]))
     ans = ans[1:]
     return ans[-1], len(ans), ans
+
+
+
+if __name__=="__main__":
+    a,b = -1,1
+    e = 0.0005
+    x,i,s = solve_iteration(target_function,a,b,e)    
+    print("корінь рівняння:", x)
+    print("кількість ітерацій:", i)
+    print("список-протокол обчислень:", s)
