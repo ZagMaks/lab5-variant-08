@@ -27,7 +27,7 @@ def save_results_to_file():
 if __name__=="__main__":
     a,b = -1,1
     e = 0.0005
-    x,i,s = solve_iteration(target_function,a,b,e)    
+    x,i,s = solve_iteration(lambda r: (math.sin(r**2)+1)/6,a,b,e)    
     print("корінь рівняння:", x)
     print("кількість ітерацій:", i)
     print("список-протокол обчислень:", s)
